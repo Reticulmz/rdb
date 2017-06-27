@@ -1,6 +1,7 @@
 package rdb_test
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"testing"
@@ -13,6 +14,8 @@ import (
 var fixtures *testfixtures.Context
 
 func TestMain(m *testing.M) {
+	flag.Parse()
+
 	// open mysql database connection
 	err := rdb.OpenDatabase("mysql", getenvDef("DSN", "root@/test?multiStatements=true"))
 	if err != nil {
@@ -20,7 +23,9 @@ func TestMain(m *testing.M) {
 		os.Exit(1)
 	}
 
-	rdb.DB = rdb.DB.Debug()
+	if testing.Verbose() {
+		rdb.DB = rdb.DB.Debug()
+	}
 
 	// only for testing purposes, this creates the tables we need (possibly different than
 	// the ones created using bdzr)

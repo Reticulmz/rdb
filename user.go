@@ -30,3 +30,30 @@ func GetUser(id int) *User {
 	}
 	return &u
 }
+
+// GetUserByUsername retrieves an user knowing its username.
+func GetUserByUsername(s string) *User {
+	var u User
+	if DB.Where("username = ?", s).First(&u).RecordNotFound() {
+		return nil
+	}
+	return &u
+}
+
+// GetUserByUsernameSafe retrieves an user knowing its username_safe.
+func GetUserByUsernameSafe(s string) *User {
+	var u User
+	if DB.Where("username_safe = ?", s).First(&u).RecordNotFound() {
+		return nil
+	}
+	return &u
+}
+
+// GetUserByEmail retrieves an user knowing its email.
+func GetUserByEmail(s string) *User {
+	var u User
+	if DB.Where("email = ?", s).First(&u).RecordNotFound() {
+		return nil
+	}
+	return &u
+}

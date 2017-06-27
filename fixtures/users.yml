@@ -70,3 +70,21 @@
   password_version: 2
   username_safe: "user3"
   flags: 0
+-
+  id: 1003
+  username: "[ PoTaTo ]"
+  password_md5: "$2a$10$J7kuY9PGKxwqy5yWOGefv.S3JLaERsPTiMwMKD/hyFmhIPcJdmr2O"
+  salt: ""
+  email: "nicememeplusplus@google.com"
+  register_datetime: 1481194806
+  privileges: 3
+  donor_expire: 0
+  ban_datetime: 0
+  aqn: 0
+  #notes: ""
+  latest_activity: 0
+  silence_end: 0
+  silence_reason: ""
+  password_version: 2
+  username_safe: "[_potato_]"
+  flags: 0
